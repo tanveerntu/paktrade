@@ -2,7 +2,7 @@
 import streamlit as st
 import pandas as pd
 import requests
-import plotly as px
+import plotly as py
 import plotly.express as px
 
 api_url = 'https://comtrade.un.org/api/get?max=A&type=C&freq=A&px=HS&ps=now&r=586&p=all&rg=all&cc=TOTAL&fmt=csv'

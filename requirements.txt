@@ -4,4 +4,3 @@ numpy==1.19.4
 requests=2.24.0
 plotly==4.12.0
 plotly_express==0.4.1
- 

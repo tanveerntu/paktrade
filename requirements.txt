@@ -2,7 +2,6 @@ pipreqs==0.4.10
 streamlit==0.70.0
 pandas==1.1.4
 numpy==1.18.5
-ply==3.11
 plotly==4.12.0
 plotly_express==0.4.1
 requests @ file:///tmp/build/80754af9/requests_1592841827918/work

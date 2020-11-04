@@ -1,5 +1,4 @@
 pipreqs==0.4.10
-streamlit==0.70.0
 pandas==1.1.4
 numpy==1.18.5
 plotly==4.12.0

@@ -1,10 +1,12 @@
-
 import streamlit as st
 import pandas as pd
 import requests
 import numpy as np
 import plotly
 import plotly.express as px
+
+# Use the full page instead of a narrow central column
+st.set_page_config(layout="wide")
 
 
 api_url = 'https://comtrade.un.org/api/get?max=A&type=C&freq=A&px=HS&ps=now&r=586&p=all&rg=all&cc=TOTAL&fmt=csv'
@@ -59,15 +61,45 @@ df_export.reset_index(drop=True, inplace=True)
 
 df_w = df[df['Partner'] == 'World'] #filtering only by partner 'world'
 
-st.subheader("Trade Balance of Pakistan")
 
 df_w.reset_index(drop=True, inplace=True)
-st.table(df_w[['Year', 'Trade Flow', 'Trade Value (US$)']])
+
+
+
+#defining two columns
+
+l1c1, l1c2 =st.beta_columns(2) #define two columns l1c1 (for line 1 column1) and l1c2
+
+l1c1.subheader("Current Trade Balance of Pakistan")
+
 #bar chart
-fig = px.bar(df_w, x='Trade Value (US$)',y='Trade Flow',orientation='h', text='Trade Value (US$)', width =900, height =600)
+fig = px.bar(df_w, x='Trade Value (US$)',y='Trade Flow',orientation='h', text='Trade Value (US$)')
 fig.update_traces(texttemplate='%{text:$,.2}') #to format text on graphs
 fig.update_layout(template="seaborn", yaxis={'categoryorder':'total ascending'})
-st.plotly_chart(fig)
+l1c1.plotly_chart(fig)
+
+#IMPORT EXPORT ALL YEARS
+api_url = 'https://comtrade.un.org/api/get?max=A&type=C&freq=A&px=HS&ps=all&r=586&p=0&rg=all&cc=TOTAL&fmt=csv'
+response = requests.get(api_url)
+
+data = response.content
+
+with open('output.csv', 'wb') as output:
+    output.write(data)
+    df_all_years = pd.read_csv("output.csv")
+
+df_all_years_import = df_all_years[df_all_years['Trade Flow Code'] == 1]
+df_all_years_export = df_all_years[df_all_years['Trade Flow Code'] == 2]
+df_all_years_export.sort_values(by=['Year'], inplace=True, ascending=False)
+df_all_years.sort_values(by=['Year'], inplace=True, ascending=False)
+
+l1c2.subheader("Pak Imports and Exports Over the Years")
+
+fig = px.line(df_all_years_export, x="Year", y="Trade Value (US$)", text="Trade Flow")
+fig.data[0].update(mode='markers+lines')
+fig.add_bar(x=df_all_years_import["Year"],y=df_all_years_import["Trade Value (US$)"], name="Imports")
+
+l1c2.plotly_chart(fig)
 
 #TEXTILE RELATED TRADE DATA
 #to get hs code-wise data of all textile related HS codes
@@ -105,55 +137,51 @@ dfe = df_export[df_export.Partner != 'World']
 
 # create bar charts
 
-st.subheader("Top 10 Importing Countries from Pakistan")
-fig = px.bar(top10exp, x='Trade Value (US$)',y='Partner', orientation='h', text='Trade Value (US$)', width =900, height =600)
+l1c1.subheader("Top 10 Importing Countries from Pakistan")
+fig = px.bar(top10exp, x='Trade Value (US$)',y='Partner', orientation='h', text='Trade Value (US$)')
 fig.update_traces(texttemplate='%{text:$,.2}') #to format text on graphs
 fig.update_layout(template="seaborn", yaxis={'categoryorder':'total ascending'})
-st.plotly_chart(fig)
+l1c1.plotly_chart(fig)
 
-st.subheader("Top 10 Exporting Countries to Pakistan")
-fig = px.bar(top10imp, x='Trade Value (US$)',y='Partner',orientation='h', text='Trade Value (US$)', width =900, height =600)
+
+l1c2.subheader("Top 10 Exporting Countries to Pakistan")
+fig = px.bar(top10imp, x='Trade Value (US$)',y='Partner',orientation='h', text='Trade Value (US$)')
 fig.update_traces(texttemplate='%{text:$,.2}') #to format text on graphs
 fig.update_layout(template="seaborn", yaxis={'categoryorder':'total ascending'})
-st.plotly_chart(fig)
+l1c2.plotly_chart(fig)
 
-
+####
 import numpy as np
 
 #For treeplots
-st.subheader("Share of Exporting Countries to Pakistan (Values in US$)")
-fig = px.treemap(dfi, path=[px.Constant(''), 'Partner'], values='Trade Value (US$)', width =900, height =600,
+l1c1.subheader("Share of Exporting Countries to Pakistan (Values in US$)")
+fig = px.treemap(dfi, path=[px.Constant(''), 'Partner'], values='Trade Value (US$)', 
     hover_data=['Trade Value (US$)'])
 fig.data[0].textinfo = 'label+text+value+percent entry'
-st.plotly_chart(fig)
+l1c1.plotly_chart(fig)
+
+l1c2.subheader("Share of Exporting Countries to Pakistan (Values in US$)")
 
 fig = px.pie(dfi, values='Trade Value (US$)', names='Partner')
 fig.update_traces(textposition='inside')
 fig.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
-st.plotly_chart(fig)
+l1c2.plotly_chart(fig)
 
-st.subheader("Share of Importing Countries from Pakistan (Values in US$)")
-fig = px.treemap(dfe, path=[px.Constant(''), 'Partner'], values='Trade Value (US$)', width =900, height =600,
+l1c1.subheader("Share of Importing Countries from Pakistan (Values in US$)")
+fig = px.treemap(dfe, path=[px.Constant(''), 'Partner'], values='Trade Value (US$)', 
     hover_data=['Trade Value (US$)'])
 fig.data[0].textinfo = 'label+text+value+percent entry'
-st.plotly_chart(fig)
+l1c1.plotly_chart(fig)
+
+l1c2.subheader("Share of Importing Countries from Pakistan (Values in US$)")
 
 fig = px.pie(dfe, values='Trade Value (US$)', names='Partner')
 fig.update_traces(textposition='inside')
 fig.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
-st.plotly_chart(fig)
+l1c2.plotly_chart(fig)
 
-st.subheader("Textile & Clothing Exports from Pakistan")
-df2_export.reset_index(drop=True, inplace=True)
-st.table(df2_export[['Year', 'Commodity Code', 'Commodity', 'Trade Value (US$)']]) #shows df2_export selected columns
 
-#treemap
-st.subheader("Share of Textile & Clothing exports from Pakistan by Commodity Codes")
 
-fig = px.treemap(df2_export, path=['Commodity Code'], values='Trade Value (US$)', width =900, height =600,
-    hover_data=['Commodity'])
-fig.data[0].textinfo = 'label+value+percent entry'
-st.plotly_chart(fig)
 
 
 #COMMODITY-WISE EXPORTS FROM PAKISTAN
@@ -174,12 +202,12 @@ df_hsexport.sort_values(by=['Trade Value (US$)'], inplace=True, ascending=False)
 
 df_hsexport.reset_index(drop=True, inplace=True)
 
-st.subheader("Share of all types of exports from Pakistan by Commodity Codes")
+l1c1.subheader("Share of all types of exports from Pakistan by Commodity Codes")
 
-fig = px.treemap(df_hsexport, path=['Commodity Code'], values='Trade Value (US$)', width =900, height =600,
+fig = px.treemap(df_hsexport, path=['Commodity Code'], values='Trade Value (US$)', 
     hover_data=['Commodity'])
 fig.data[0].textinfo = 'label+value+percent entry'
-st.plotly_chart(fig)
+l1c1.plotly_chart(fig)
 
 
 
@@ -202,16 +230,33 @@ df_hsimport.sort_values(by=['Trade Value (US$)'], inplace=True, ascending=False)
 
 df_hsimport.reset_index(drop=True, inplace=True) #to reset index numbering of DF
 
-st.subheader("Share of all types of imports to Pakistan by Commodity Codes")
-fig = px.treemap(df_hsimport, path=['Commodity Code'], values='Trade Value (US$)', width =900, height =600,
+l1c2.subheader("Share of all types of imports to Pakistan by Commodity Codes")
+fig = px.treemap(df_hsimport, path=['Commodity Code'], values='Trade Value (US$)', 
     hover_data=['Commodity'])
 fig.data[0].textinfo = 'label+value+percent entry'
-st.plotly_chart(fig)
+l1c2.plotly_chart(fig)
+
+#treemap
+l1c1.subheader("Share of Textile & Clothing exports from Pakistan by Commodity Codes")
+
+fig = px.treemap(df2_export, path=['Commodity Code'], values='Trade Value (US$)', 
+    hover_data=['Commodity'])
+fig.data[0].textinfo = 'label+value+percent entry'
+l1c1.plotly_chart(fig)
 
 
+l1c2.subheader("Pie Chart of Textile & Clothing exports from Pakistan")
 
+fig = px.pie(df2_export, values='Trade Value (US$)', names='Commodity Code', labels={'Commodity':'Trade Value (US$)'}, hole=.3)
+fig.update_traces(textposition='inside')
+fig.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
+
+l1c2.plotly_chart(fig)
 #TABLES
 
+st.subheader("Textile & Clothing Exports from Pakistan")
+df2_export.reset_index(drop=True, inplace=True)
+st.table(df2_export[['Year', 'Commodity Code', 'Commodity', 'Trade Value (US$)']]) #shows df2_export selected columns
 
 st.subheader("All types of Commodity-wise exports from Pakistan")
 st.table(df_hsexport[['Year', 'Commodity Code', 'Commodity', 'Trade Value (US$)']])
@@ -224,4 +269,5 @@ st.table(df_export[['Year', 'Partner', 'Trade Value (US$)']])
 
 st.subheader("Country-wise Total Imports of Pakistan, including all commodities")
 st.table(df_import[['Year', 'Partner', 'Trade Value (US$)']])
+
 

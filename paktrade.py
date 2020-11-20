@@ -162,7 +162,7 @@ l1c1.plotly_chart(fig)
 
 l1c2.subheader("Share of Exporting Countries to Pakistan (Values in US$)")
 
-fig = px.pie(dfi, values='Trade Value (US$)', names='Partner')
+fig = px.pie(dfi, values='Trade Value (US$)', names='Partner', hole=.3)
 fig.update_traces(textposition='inside')
 fig.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
 l1c2.plotly_chart(fig)
@@ -175,7 +175,7 @@ l1c1.plotly_chart(fig)
 
 l1c2.subheader("Share of Importing Countries from Pakistan (Values in US$)")
 
-fig = px.pie(dfe, values='Trade Value (US$)', names='Partner')
+fig = px.pie(dfe, values='Trade Value (US$)', names='Partner', hole=.3)
 fig.update_traces(textposition='inside')
 fig.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
 l1c2.plotly_chart(fig)

@@ -247,7 +247,7 @@ l1c1.plotly_chart(fig)
 
 l1c2.subheader("Pie Chart of Textile & Clothing exports from Pakistan")
 
-fig = px.pie(df2_export, values='Trade Value (US$)', names='Commodity Code', labels={'Commodity':'Trade Value (US$)'}, hole=.3)
+fig = px.pie(df2_export, values='Trade Value (US$)', names='Commodity Code', hover_name="Commodity", labels={'Commodity':'Trade Value (US$)'}, hole=.3)
 fig.update_traces(textposition='inside')
 fig.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
 

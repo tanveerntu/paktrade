@@ -11,7 +11,7 @@ st.set_page_config(layout="centered")
 # Add a selectbox to the sidebar:
 option = st.sidebar.selectbox(
 'Please select an option',
-('Overall Trade Statistics', 'Textile Statistics')
+('Overall Trade Statistics', 'Textile Trade Statistics')
 )
 
 if option == 'Overall Trade Statistics': 

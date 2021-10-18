@@ -4,6 +4,8 @@ import requests
 import numpy as np
 import plotly
 import plotly.express as px
+import urllib.request
+import openpyxl
 
 # Use the full page instead of a narrow central column
 st.set_page_config(layout="centered")
@@ -310,7 +312,7 @@ else:
     st.write("Source: Pakistan Bureau of Statistics")
 
     # to load dataset from computer as df
-    df = pd.read_excel('monthly_textile_exports_pbs.xlsx')
+    df=pd.read_excel('monthly_textile_exports_pbs.xlsx', engine='openpyxl')
 
     # Get sum of values in a column 'Exports_US$'
     # for those rows only where 'year' is '2020'
@@ -318,14 +320,25 @@ else:
 
     exports_2019 = df.loc[(df['year'].isin(['2019'])) & (df['Category'].isin(['Monthly total'])), 'Exports_US$'].sum() #filtering only '2019' rows in 'year' column & 'Monthly total' rows in 'category' column
     exports_2020 = df.loc[(df['year'].isin(['2020'])) & (df['Category'].isin(['Monthly total'])), 'Exports_US$'].sum()
-    change = exports_2020-exports_2019
+    change_year = exports_2020-exports_2019
 
 
 
     #Key metrics
     kpi1, kpi2 = st.columns(2)
     kpi1.metric(label = "Pak Textile & Clothing Exports in 2019", value = "${:,.0f}".format(exports_2019)) #0f means 0 decimal places
-    kpi2.metric(label = "Pak Textile & Clothing Exports in 2020", value = "${:,.0f}".format(exports_2020), delta = "{:,.0f}".format(change), delta_color='normal')
+    kpi2.metric(label = "Pak Textile & Clothing Exports in 2020", value = "${:,.0f}".format(exports_2020), delta = "{:,.0f}".format(change_year), delta_color='normal')
+
+
+
+
+    exports_sep_20 = df.loc[(df['month_year'].isin(['Sep, 20'])) & (df['Category'].isin(['Monthly total'])), 'Exports_US$'].sum() #filtering only '2019' rows in 'year' column & 'Monthly total' rows in 'category' column
+    exports_sep_21 = df.loc[(df['month_year'].isin(['Sep, 21'])) & (df['Category'].isin(['Monthly total'])), 'Exports_US$'].sum()
+    change_month = exports_sep_21-exports_sep_20
+
+    kpi3, kpi4 = st.columns(2)
+    kpi3.metric(label = "September, 2020", value = "${:,.0f}".format(exports_sep_20)) #0f means 0 decimal places
+    kpi4.metric(label = "September, 2021", value = "${:,.0f}".format(exports_sep_21), delta = "{:,.0f}".format(change_month), delta_color='normal')
 
 
     # filter rows for monthly total
@@ -434,11 +447,21 @@ else:
         color_discrete_sequence=["#0083B8"] * len(df_2020_wo_total_sorted),
         template="plotly_white",
     )
+    st.plotly_chart(fig_product_exports)
 
+    #bubble chart
+
+    df_bubble = df_2020_wo_total.groupby(by=["Category"]).sum()[["Exports_US$"]].sort_values(by="Exports_US$")
+
+    fig = px.scatter(df_bubble, y="Exports_US$", text = 'Exports_US$', size="Exports_US$")
+
+    st.plotly_chart(fig)
     #fig_product_exports.update_traces(textposition='outside')
 
-    st.plotly_chart(fig_product_exports)
 
     #show dataframe table
     #st.dataframe(df)
+
+
+
 

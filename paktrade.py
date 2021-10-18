@@ -23,7 +23,7 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 # Add a selectbox to the sidebar:
 option = st.sidebar.selectbox(
 'Please select an option',
-('Overall Trade Statistics', 'Textile Trade Statistics')
+('Textile Trade Statistics', 'Overall Trade Statistics')
 )
 
 if option == 'Overall Trade Statistics': 

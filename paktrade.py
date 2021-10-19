@@ -311,7 +311,7 @@ if option == 'Overall Trade Statistics':
 else:
 
     st.title('Textile & Clothing Exports')
-    st.write("Source: Pakistan Bureau of Statistics")
+    st.write("Source: Pakistan Bureau of Statistics/National Textile University, Pakistan")
 
     # to load dataset from computer as df
     df=pd.read_excel('monthly_textile_exports_pbs.xlsx', engine='openpyxl')

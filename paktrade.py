@@ -8,7 +8,7 @@ import urllib.request
 import openpyxl
 
 # Use the full page instead of a narrow central column
-st.set_page_config(layout="centered")
+st.set_page_config(layout='centered')
 
 # ---- HIDE STREAMLIT STYLE ----
 hide_st_style = """
@@ -20,8 +20,10 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
+st.title("PAKISTAN TRADE STATISTICS")
+
 # Add a selectbox to the sidebar:
-option = st.sidebar.selectbox(
+option = st.selectbox(
 'Please select an option',
 ('Textile Trade Statistics', 'Overall Trade Statistics')
 )
@@ -65,8 +67,8 @@ if option == 'Overall Trade Statistics':
         output.write(data)
         df = pd.read_csv("output.csv")
 
-    st.title("Latest Pakistan Trade Statistics from UNComtrade Database")
-    st.write("Compiled by: National Textile Univeristy, Pakistan.")
+    st.title("Overall Pakistan Trade")
+    st.write("Compiled by: National Textile Univeristy Pakistan, from UNComtrade Database.")
     #to filter values based on trade flow code
     df_import = df[df['Trade Flow Code'] == 1]
     df_export = df[df['Trade Flow Code'] == 2]
@@ -308,7 +310,7 @@ if option == 'Overall Trade Statistics':
 
 else:
 
-    st.title('TEXTILE & CLOTHING EXPORTS FROM PAKISTAN')
+    st.title('Textile & Clothing Exports')
     st.write("Source: Pakistan Bureau of Statistics")
 
     # to load dataset from computer as df
@@ -321,13 +323,15 @@ else:
     exports_2019 = df.loc[(df['year'].isin(['2019'])) & (df['Category'].isin(['Monthly total'])), 'Exports_US$'].sum() #filtering only '2019' rows in 'year' column & 'Monthly total' rows in 'category' column
     exports_2020 = df.loc[(df['year'].isin(['2020'])) & (df['Category'].isin(['Monthly total'])), 'Exports_US$'].sum()
     change_year = exports_2020-exports_2019
+    change =(change_year / exports_2019)
+    percentage_change = (change * 100)
 
 
 
     #Key metrics
     kpi1, kpi2 = st.columns(2)
     kpi1.metric(label = "Pak Textile & Clothing Exports in 2019", value = "${:,.0f}".format(exports_2019)) #0f means 0 decimal places
-    kpi2.metric(label = "Pak Textile & Clothing Exports in 2020", value = "${:,.0f}".format(exports_2020), delta = "{:,.0f}".format(change_year), delta_color='normal')
+    kpi2.metric(label = "Pak Textile & Clothing Exports in 2020", value = "${:,.0f}".format(exports_2020), delta = "{:,.0f}".format(percentage_change)+' % change from last year', delta_color='normal')
 
 
 
@@ -335,10 +339,12 @@ else:
     exports_sep_20 = df.loc[(df['month_year'].isin(['Sep, 20'])) & (df['Category'].isin(['Monthly total'])), 'Exports_US$'].sum() #filtering only '2019' rows in 'year' column & 'Monthly total' rows in 'category' column
     exports_sep_21 = df.loc[(df['month_year'].isin(['Sep, 21'])) & (df['Category'].isin(['Monthly total'])), 'Exports_US$'].sum()
     change_month = exports_sep_21-exports_sep_20
+    change_m =(change_month / exports_sep_20)
+    percentage_change_m = (change_m * 100)
 
     kpi3, kpi4 = st.columns(2)
     kpi3.metric(label = "September, 2020", value = "${:,.0f}".format(exports_sep_20)) #0f means 0 decimal places
-    kpi4.metric(label = "September, 2021", value = "${:,.0f}".format(exports_sep_21), delta = "{:,.0f}".format(change_month), delta_color='normal')
+    kpi4.metric(label = "September, 2021", value = "${:,.0f}".format(exports_sep_21), delta = "{:,.0f}".format(percentage_change_m)+' % change from same month of last year', delta_color='normal')
 
 
     # filter rows for monthly total
@@ -437,6 +443,17 @@ else:
     fig.data[0].textinfo = 'label+value+percent entry'
     st.plotly_chart(fig)
 
+    
+
+    #bubble chart
+
+    df_2020_grouped = df_2020_wo_total.groupby(by=["Category"]).sum()[["Exports_US$"]].sort_values(by="Exports_US$")
+    fig = px.scatter(df_2020_grouped, y="Exports_US$", text = 'Exports_US$', size="Exports_US$")
+    st.plotly_chart(fig)
+    #fig_product_exports.update_traces(textposition='outside')
+    
+   
+    #sorted bar chart
     fig_product_exports = px.bar(
         df_2020_wo_total_sorted,
         x="Exports_US$",
@@ -448,19 +465,10 @@ else:
         template="plotly_white",
     )
     st.plotly_chart(fig_product_exports)
-
-    #bubble chart
-
-    df_bubble = df_2020_wo_total.groupby(by=["Category"]).sum()[["Exports_US$"]].sort_values(by="Exports_US$")
-
-    fig = px.scatter(df_bubble, y="Exports_US$", text = 'Exports_US$', size="Exports_US$")
-
-    st.plotly_chart(fig)
-    #fig_product_exports.update_traces(textposition='outside')
-
-
     #show dataframe table
     #st.dataframe(df)
+
+
 
 
 

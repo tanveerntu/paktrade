@@ -7,6 +7,7 @@ import plotly.express as px
 import urllib.request
 import openpyxl
 
+
 # Use the full page instead of a narrow central column
 st.set_page_config(layout='centered')
 
@@ -311,7 +312,7 @@ if option == 'Overall Trade Statistics':
 else:
 
     st.title('Textile & Clothing Exports')
-    st.write("Source: Pakistan Bureau of Statistics/National Textile University, Pakistan")
+    st.write("Source: Pakistan Bureau of Statistics")
 
     # to load dataset from computer as df
     df=pd.read_excel('monthly_textile_exports_pbs.xlsx', engine='openpyxl')
@@ -349,8 +350,19 @@ else:
 
     # filter rows for monthly total
     st.subheader("Monthly Total Textile & Clothing Exports from Pakistan")
+ 
+
+    df_wo_total= df[df.Category != 'Monthly total'] #droping "Monthly total" rows, in "Category"
+
     fig = px.area(df[df["Category"].isin(["Monthly total"])], x="month_year", y="Exports_US$", title="Monthly Total Textile & Clothing Exports from Pakistan")
     st.plotly_chart(fig)
+
+    fig = px.area(df_wo_total, x="month_year", y="Exports_US$", color = "Category", title="Monthly Total Textile & Clothing Exports from Pakistan- Commulative by Category")
+    st.plotly_chart(fig)
+
+    fig = px.line(df_wo_total, x="month_year", y="Exports_US$", color = "Category", title="Monthly Total Textile & Clothing Exports from Pakistan- by Individual Category")
+    st.plotly_chart(fig)
+  
 
     # filter rows for cotton fiber
     st.subheader("Monthly raw cotton fiber Exports from Pakistan")
@@ -467,6 +479,8 @@ else:
     st.plotly_chart(fig_product_exports)
     #show dataframe table
     #st.dataframe(df)
+
+
 
 
 

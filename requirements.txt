@@ -1,9 +1,6 @@
 pipreqs==0.4.10
-pandas==1.1.4
 numpy==1.18.5
-plotly==4.12.0
 plotly_express==0.4.1
 openpyxl==3.0.4
 pandas==1.2.5
 plotly==5.4.0
-streamlit==0.84.2

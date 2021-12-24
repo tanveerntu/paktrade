@@ -9,7 +9,7 @@ import openpyxl
 
 
 # Use the full page instead of a narrow central column
-st.set_page_config(layout='centered')
+#st.set_page_config(layout='centered')
 
 # ---- HIDE STREAMLIT STYLE ----
 hide_st_style = """

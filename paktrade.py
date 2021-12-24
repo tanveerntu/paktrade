@@ -10,6 +10,7 @@ import openpyxl
 
 # Use the full page instead of a narrow central column
 #st.set_page_config(layout='centered')
+st.set_page_config(layout='wide')
 
 # ---- HIDE STREAMLIT STYLE ----
 hide_st_style = """
@@ -321,7 +322,6 @@ else:
 
             ##
             # Use the full page instead of a narrow central column
-            #st.set_page_config(layout='wide')
             st.title("Pakistan Textile Exports")
             st.write("Data Source: Pakistan Bureau of Statistics")
 

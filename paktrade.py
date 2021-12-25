@@ -46,7 +46,6 @@ if option == 'Cotton Prices':
             # defining style color
             #colors = {"background": "#000000", "text": "#ffFFFF"}
             # Use the full page instead of a narrow central column
-            st.set_page_config(layout='wide')
 
             from datetime import datetime, timedelta
 

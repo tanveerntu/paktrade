@@ -29,7 +29,7 @@ st.title("PAKISTAN TRADE STATISTICS")
 # Add a selectbox to the sidebar:
 option = st.selectbox(
 'Please select an option',
-('Textile Trade Statistics', 'Overall Trade Statistics')
+('Textile Trade Statistics', 'Overall Trade Statistics', 'Cotton Prices')
 )
 
 ##########

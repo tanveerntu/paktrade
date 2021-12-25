@@ -32,6 +32,103 @@ option = st.selectbox(
 ('Textile Trade Statistics', 'Overall Trade Statistics')
 )
 
+##########
+if option == 'Cotton Prices':
+            import yfinance as yf
+
+            from plotly import graph_objs as go
+
+            import pandas as pd
+            import streamlit as st 
+
+            #
+            # defining style color
+            #colors = {"background": "#000000", "text": "#ffFFFF"}
+            # Use the full page instead of a narrow central column
+            st.set_page_config(layout='wide')
+
+            from datetime import datetime, timedelta
+
+            #data = yf.download(tickers=stock_price, period = ‘how_many_days’, interval = ‘how_long_between_each_check’, rounding= bool)
+            #data = yf.download(tickers='CT=F', period = '5Y', interval = '1D', rounding= True)
+            data = yf.download(tickers='CT=F', start = '2017-01-01', end = datetime.now().date(), rounding= True)
+
+            #data 
+            data= data.reset_index() # to show date as column header
+            #data 
+
+            ## getting the live ticker price
+
+            # import stock_info module from yahoo_fin
+            from yahoo_fin import stock_info as si
+
+            #to get live price of ticker/cotton CT=F
+            price = si.get_live_price('CT=F')
+            prev_close = data.Close.iloc[-2] #iloc[-2] is second last row of res_df ; iloc[0] is first row 
+
+
+            ##
+
+
+
+
+            fig = go.Figure()
+
+            fig.add_trace(go.Scatter(x=data['Date'], 
+                                    y=data['Close'], 
+                                    name = '',
+                                    texttemplate='%{text:.2s}', # to  shorten text into 3 digits, use '%{text:.3s}'
+                                    ))
+            fig.update_traces(hovertemplate='Date: %{x} <br>Price: %{y} cents per pound') #<br> adds space or shifts to next line; x & y is repected axis value; 
+
+            fig.add_trace(go.Indicator(
+                        domain={"x": [0, 1], "y": [0.5, 1]},
+                        value=price,
+                        mode="number+delta",
+                        title={"text": "Live Price in cents per pound"},
+                        delta={"reference": prev_close},
+                    ))
+
+            fig.update_xaxes(
+            rangeslider_visible = False,
+                rangeselector = dict(
+                buttons = list([
+                dict(count = 1, label = '1W', step = 'day', stepmode = 'backward'),
+                dict(count = 1, label = '1M', step = 'month', stepmode = 'backward'),
+                dict(count = 6, label = '6M', step = 'month', stepmode = 'backward'),
+                dict(count = 1, label = 'YTD', step = 'year', stepmode = 'todate'),
+                dict(count = 1, label = '1Y', step = 'year', stepmode = 'backward'),
+                dict(count = 2, label = '2Y', step = 'year', stepmode = 'backward'),
+                dict(count = 5, label = '5Y', step = 'year', stepmode = 'backward'),
+                #dict(step = 'all')
+                ])))
+
+            fig.update_yaxes(title_text = 'Cents Per Pound', tickprefix = '')
+            #fig.update_xaxes(showspikes=True, spikecolor="red", spikesnap="cursor", spikemode="across", spikethickness=3) #xaxis spike on hover
+            #fig.update_yaxes(showspikes=True, spikecolor="red", spikesnap="cursor", spikemode="across", spikethickness=3) #yais spike on hover
+
+            fig.update_layout(
+                autosize=True, height=700, width=1100,
+                title="Cotton Rates - ICE Futures", 
+                #margin=dict(t=60, b=0, l=40, r=40),
+                title_font=dict(size=36, color='#111111', family="fjalla one, sans-serif"),
+                #hovermode='x unified',
+                plot_bgcolor='#ededed',
+                paper_bgcolor='#ffffff',
+                font=dict(color='#111111', size=20, family="roboto, sans-serif"),    #font of lablels of axises
+                template='presentation'
+                #legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
+            )
+            fig.add_annotation(
+                        text="Source: Yahoo Finance/NTU",
+                        xref="x domain", yref="y domain",
+                        x=0.5, y=-0.1, 
+                        showarrow=False,
+                        arrowhead=1)
+            st.plotly_chart(fig, use_container_width=True) # to show Figure; container width true makes fig. size responsive
+
+#############
+
 if option == 'Overall Trade Statistics': 
 
             api_url = 'https://comtrade.un.org/api/get?max=A&type=C&freq=A&px=HS&ps=now&r=586&p=all&rg=all&cc=TOTAL&fmt=csv'

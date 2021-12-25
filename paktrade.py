@@ -8,6 +8,7 @@ import urllib.request
 import openpyxl
 from plotly import graph_objs as go
 from plotly.subplots import make_subplots
+import yfinance as yf
 
 
 # Use the full page instead of a narrow central column

@@ -32,7 +32,7 @@ option = st.selectbox(
 
 if option == 'Overall Trade Statistics': 
 
-                api_url = 'https://comtrade.un.org/api/get?max=A&type=C&freq=A&px=HS&ps=now&r=586&p=all&rg=all&cc=TOTAL&fmt=csv'
+            api_url = 'https://comtrade.un.org/api/get?max=A&type=C&freq=A&px=HS&ps=now&r=586&p=all&rg=all&cc=TOTAL&fmt=csv'
 
 
             #get.Comtrade <- function(url="http://comtrade.un.org/api/get?"

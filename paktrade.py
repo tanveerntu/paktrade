@@ -6,6 +6,8 @@ import plotly
 import plotly.express as px
 import urllib.request
 import openpyxl
+from plotly import graph_objs as go
+from plotly.subplots import make_subplots
 
 
 # Use the full page instead of a narrow central column

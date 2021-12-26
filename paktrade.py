@@ -128,6 +128,10 @@ if option == 'Cotton Statistics':
             st.plotly_chart(fig, use_container_width=True) # to show Figure; container width true makes fig. size responsive
             
             ####################
+            ###cotton arrivals
+            ###################
+            df_cotton_arrivals = pd.read_csv('cotton_arrivals.csv')
+
             fig_cotton_arrivals = go.Figure()
 
             fig_cotton_arrivals.add_trace(go.Scatter(

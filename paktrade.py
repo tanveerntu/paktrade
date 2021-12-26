@@ -30,11 +30,11 @@ st.title("PAKISTAN TRADE STATISTICS")
 # Add a selectbox to the sidebar:
 option = st.selectbox(
 'Please select an option',
-('Textile Trade Statistics', 'Overall Trade Statistics', 'Cotton Prices')
+('Textile Trade Statistics', 'Overall Trade Statistics', 'Cotton Statistics')
 )
 
 ##########
-if option == 'Cotton Prices':
+if option == 'Cotton Statistics':
             import yfinance as yf
 
             from plotly import graph_objs as go
@@ -126,6 +126,82 @@ if option == 'Cotton Prices':
                         showarrow=False,
                         arrowhead=1)
             st.plotly_chart(fig, use_container_width=True) # to show Figure; container width true makes fig. size responsive
+            
+            ####################
+            fig_cotton_arrivals = go.Figure()
+
+            fig_cotton_arrivals.add_trace(go.Scatter(
+                x=df_cotton_arrivals["Date"], 
+                y=df_cotton_arrivals["2018-19"], 
+                name="2018-19", 
+                text=df_cotton_arrivals['2018-19'],
+                texttemplate='%{text:.3s}', #text shorten into 3 digits
+                mode="markers+lines",
+                textposition="bottom right",
+                textfont=dict(family="roboto, sans-serif", size=18, color="Purple"),
+                marker=dict(size=12, color="Purple"),
+                line=dict(width=2.5, color="Purple"),
+            ))
+
+            fig_cotton_arrivals.add_trace(go.Scatter(
+                x=df_cotton_arrivals["Date"], 
+                y=df_cotton_arrivals["2019-20"], 
+                name="2019-20", 
+                text=df_cotton_arrivals['2019-20'],
+                texttemplate='%{text:.3s}', #text shorten into 3 digits
+                mode="markers+lines",
+                textposition="bottom right",
+                textfont=dict(family="roboto, sans-serif", size=18, color="Green"),
+                marker=dict(size=12, color="Green"),
+                line=dict(width=2.5, color="Green"),
+            ))
+
+            fig_cotton_arrivals.add_trace(go.Scatter(
+                x=df_cotton_arrivals["Date"], 
+                y=df_cotton_arrivals["2020-21"], 
+                name="2020-21", 
+                text=df_cotton_arrivals['2020-21'],
+                texttemplate='%{text:.3s}', #text shorten into 3 digits
+                mode="markers+lines",
+                textposition="bottom right",
+                textfont=dict(family="roboto, sans-serif", color="Blue", size=18),
+                marker=dict(size=12, color="Blue"),
+                line=dict(width=2.5, color="Blue"),
+            ))
+
+            fig_cotton_arrivals.add_trace(go.Scatter(
+                x=df_cotton_arrivals["Date"], 
+                y=df_cotton_arrivals["2021-22"], 
+                name="2021-22", 
+                text=df_cotton_arrivals['2021-22'],
+                texttemplate='%{text:.3s}', # to text shorten into 3 digits, use '%{text:.3s}'
+                mode="markers+lines+text",
+                textposition="bottom right",
+                textfont=dict(family="fjalla one, sans-serif", color="Red", size=20),
+                marker=dict(size=12, color="Red"),
+                line=dict(width=2.5, color="Red")
+            ))
+
+            fig_cotton_arrivals.update_layout(
+                autosize=True, height=700, width=1100,
+                title="Cotton Arrivals in Pakistani Factories",
+                #margin=dict(t=60, b=0, l=40, r=40),
+                title_font=dict(size=25, color='#111111', family="fjalla one, sans-serif"),
+                xaxis_title='', yaxis_title="Cumulative No. of Cotton Bales",
+                plot_bgcolor='#ededed',
+                paper_bgcolor='#ffffff',
+                font=dict(color='#111111', size=20, family="roboto, sans-serif"),    #font of lablels of axises
+                bargap=0.2,                             #value can be An int or float in the interval [0, 1]
+                #legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
+            )
+            fig_cotton_arrivals.add_annotation(
+                        text="Source: PCGA/NTU",
+                        xref="x domain", yref="y domain",
+                        x=1, y=1.1, 
+                        showarrow=False,
+                        arrowhead=1)
+            st.plotly_chart(fig_cotton_arrivals, use_container_width=True) # to show Figure; container width true makes fig. size responsive
+
 
 #############
 

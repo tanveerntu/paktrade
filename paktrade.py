@@ -194,7 +194,7 @@ if option == 'Cotton Statistics':
                 xaxis_title='', yaxis_title="Cumulative No. of Cotton Bales",
                 plot_bgcolor='#ededed',
                 paper_bgcolor='#ffffff',
-                font=dict(color='#111111', size=20, family="roboto, sans-serif"),    #font of lablels of axises
+                font=dict(color='#111111', size=16, family="roboto, sans-serif"),    #font of lablels of axises
                 bargap=0.2,                             #value can be An int or float in the interval [0, 1]
                 #legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
             )

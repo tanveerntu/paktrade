@@ -13,8 +13,11 @@ import yfinance as yf
 
 # Use the full page instead of a narrow central column
 #st.set_page_config(layout='centered')
-st.set_page_config(layout='wide')
-
+st.set_page_config(
+    page_title = 'PAKISTAN TRADE STATISTICS',
+    page_icon = '✅',
+    layout = 'wide'
+)
 # ---- HIDE STREAMLIT STYLE ----
 hide_st_style = """
             <style>

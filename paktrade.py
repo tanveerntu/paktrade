@@ -763,7 +763,7 @@ else:
 
             fig_yearly_indicators.add_trace(go.Indicator(
                 mode = "number+delta",    
-                title = {"text": "Exports in Jan-Nov 2021"},
+                title = {"text": "Exports in 2021"},
                 value = int(exports_2021),
                 number = {'prefix': "$"},
                 delta = {'reference': int(exports_2020), 'relative': True},
@@ -809,7 +809,7 @@ else:
                                 color='category',
                                 labels={"category":"Category"},
                                 hole=0.7, 
-                                title="Pakistan Textile Exports Jan-Nov 2021",
+                                title="Pakistan Textile Exports in 2021",
                                 template='plotly'
                                 )
 

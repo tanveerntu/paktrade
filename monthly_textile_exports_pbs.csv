@@ -10,7 +10,7 @@ date,category,Exports_US$,volume,unit_price
 1/1/2019,"Tents, Tarpaulines",7433000,2569,
 1/1/2019,Garments,256534000,4789000,53.56734183
 1/1/2019,Artificial Silk & Synthetics,25736000,17855,
-1/1/2019,Madeups (excl. towels & bedwear),62734000,0,
+1/1/2019,Madeups ,62734000,0,
 1/1/2019,Other Textiles,33909000,0,
 2/1/2019,Raw Cotton,835000,527,
 2/1/2019,Cotton Yarn,108759000,43231,2.515764151
@@ -23,7 +23,7 @@ date,category,Exports_US$,volume,unit_price
 2/1/2019,"Tents, Tarpaulines",6399000,2411,
 2/1/2019,Garments,225534000,4189000,53.83957985
 2/1/2019,Artificial Silk & Synthetics,23159000,15649,
-2/1/2019,Madeups (excl. towels & bedwear),56059000,0,
+2/1/2019,Madeups ,56059000,0,
 2/1/2019,Other Textiles,29075000,0,
 3/1/2019,Raw Cotton,437000,307,
 3/1/2019,Cotton Yarn,91920000,36258,2.535164653
@@ -36,7 +36,7 @@ date,category,Exports_US$,volume,unit_price
 3/1/2019,"Tents, Tarpaulines",5152000,1876,
 3/1/2019,Garments,214263000,4100000,52.25926829
 3/1/2019,Artificial Silk & Synthetics,23867000,17495,
-3/1/2019,Madeups (excl. towels & bedwear),56852000,0,
+3/1/2019,Madeups ,56852000,0,
 3/1/2019,Other Textiles,31222000,0,
 4/1/2019,Raw Cotton,2834000,1701,
 4/1/2019,Cotton Yarn,105615000,41492,2.545430444
@@ -49,7 +49,7 @@ date,category,Exports_US$,volume,unit_price
 4/1/2019,"Tents, Tarpaulines",4789000,1988,
 4/1/2019,Garments,231184000,4474000,51.67277604
 4/1/2019,Artificial Silk & Synthetics,28619000,26933,
-4/1/2019,Madeups (excl. towels & bedwear),57743000,0,
+4/1/2019,Madeups ,57743000,0,
 4/1/2019,Other Textiles,32510000,0,
 5/1/2019,Raw Cotton,326000,207,
 5/1/2019,Cotton Yarn,106750000,42065,2.537739213
@@ -62,7 +62,7 @@ date,category,Exports_US$,volume,unit_price
 5/1/2019,"Tents, Tarpaulines",4436000,1889,
 5/1/2019,Garments,252432000,5036000,50.12549643
 5/1/2019,Artificial Silk & Synthetics,23832000,23227,
-5/1/2019,Madeups (excl. towels & bedwear),58674000,0,
+5/1/2019,Madeups ,58674000,0,
 5/1/2019,Other Textiles,33233000,0,
 6/1/2019,Raw Cotton,1517000,1202,
 6/1/2019,Cotton Yarn,77335000,30397,2.544165543
@@ -75,7 +75,7 @@ date,category,Exports_US$,volume,unit_price
 6/1/2019,"Tents, Tarpaulines",4917000,2100,
 6/1/2019,Garments,214076000,4809000,44.51569973
 6/1/2019,Artificial Silk & Synthetics,24178000,38253,
-6/1/2019,Madeups (excl. towels & bedwear),44573000,0,
+6/1/2019,Madeups ,44573000,0,
 6/1/2019,Other Textiles,25884000,0,
 7/1/2019,Raw Cotton,4142000,2660,
 7/1/2019,Cotton Yarn,97433000,39180,2.486804492
@@ -88,7 +88,7 @@ date,category,Exports_US$,volume,unit_price
 7/1/2019,"Tents, Tarpaulines",4692000,1960,
 7/1/2019,Garments,232327000,5260000,44.16863118
 7/1/2019,Artificial Silk & Synthetics,24900000,32418,
-7/1/2019,Madeups (excl. towels & bedwear),48244000,0,
+7/1/2019,Madeups ,48244000,0,
 7/1/2019,Other Textiles,29292000,0,
 8/1/2019,Raw Cotton,4158000,2677,
 8/1/2019,Cotton Yarn,112283000,42717,2.628531966
@@ -101,7 +101,7 @@ date,category,Exports_US$,volume,unit_price
 8/1/2019,"Tents, Tarpaulines",5595000,2112,
 8/1/2019,Garments,235310000,5176000,45.46174652
 8/1/2019,Artificial Silk & Synthetics,27124000,32882,
-8/1/2019,Madeups (excl. towels & bedwear),52070000,0,
+8/1/2019,Madeups ,52070000,0,
 8/1/2019,Other Textiles,29043000,0,
 9/1/2019,Raw Cotton,2526000,1643,
 9/1/2019,Cotton Yarn,87521000,34173,2.561115501
@@ -114,7 +114,7 @@ date,category,Exports_US$,volume,unit_price
 9/1/2019,"Tents, Tarpaulines",5484000,2104,
 9/1/2019,Garments,199108000,4336000,45.9197417
 9/1/2019,Artificial Silk & Synthetics,25870000,29926,
-9/1/2019,Madeups (excl. towels & bedwear),47736000,0,
+9/1/2019,Madeups ,47736000,0,
 9/1/2019,Other Textiles,29129000,0,
 10/1/2019,Raw Cotton,1386000,974,
 10/1/2019,Cotton Yarn,90273000,35372,2.552103359
@@ -127,7 +127,7 @@ date,category,Exports_US$,volume,unit_price
 10/1/2019,"Tents, Tarpaulines",8488000,3230,
 10/1/2019,Garments,238797000,5182000,46.08201467
 10/1/2019,Artificial Silk & Synthetics,30594000,35038,
-10/1/2019,Madeups (excl. towels & bedwear),60694000,0,
+10/1/2019,Madeups ,60694000,0,
 10/1/2019,Other Textiles,39326000,0,
 11/1/2019,Raw Cotton,2069000,1544,
 11/1/2019,Cotton Yarn,98506000,41788,2.357279602
@@ -140,7 +140,7 @@ date,category,Exports_US$,volume,unit_price
 11/1/2019,"Tents, Tarpaulines",7528000,3295,
 11/1/2019,Garments,250254000,5563000,44.98543951
 11/1/2019,Artificial Silk & Synthetics,27363000,31036,
-11/1/2019,Madeups (excl. towels & bedwear),57090000,0,
+11/1/2019,Madeups ,57090000,0,
 11/1/2019,Other Textiles,35338000,0,
 12/1/2019,Raw Cotton,1050000,806,
 12/1/2019,Cotton Yarn,58131000,23702,2.452577842
@@ -153,7 +153,7 @@ date,category,Exports_US$,volume,unit_price
 12/1/2019,"Tents, Tarpaulines",7813000,3454,
 12/1/2019,Garments,256575000,5121000,50.10251904
 12/1/2019,Artificial Silk & Synthetics,31366000,34707,
-12/1/2019,Madeups (excl. towels & bedwear),57030000,0,
+12/1/2019,Madeups ,57030000,0,
 12/1/2019,Other Textiles,49123000,0,
 1/1/2020,Raw Cotton,556000,420,
 1/1/2020,Cotton Yarn,95625000,40454,2.363795916
@@ -166,7 +166,7 @@ date,category,Exports_US$,volume,unit_price
 1/1/2020,"Tents, Tarpaulines",10009000,3775,
 1/1/2020,Garments,268964000,4171000,64.48429633
 1/1/2020,Artificial Silk & Synthetics,32588000,35442,
-1/1/2020,Madeups (excl. towels & bedwear),55659000,0,
+1/1/2020,Madeups ,55659000,0,
 1/1/2020,Other Textiles,49400000,0,
 2/1/2020,Raw Cotton,914000,701,
 2/1/2020,Cotton Yarn,97645000,40210,2.428376026
@@ -179,7 +179,7 @@ date,category,Exports_US$,volume,unit_price
 2/1/2020,"Tents, Tarpaulines",12090000,3153,
 2/1/2020,Garments,280572000,4252000,65.98588899
 2/1/2020,Artificial Silk & Synthetics,31725000,34224,
-2/1/2020,Madeups (excl. towels & bedwear),60202000,0,
+2/1/2020,Madeups ,60202000,0,
 2/1/2020,Other Textiles,54621000,0,
 3/1/2020,Raw Cotton,208000,155,
 3/1/2020,Cotton Yarn,82393000,33666,2.447365294
@@ -192,7 +192,7 @@ date,category,Exports_US$,volume,unit_price
 3/1/2020,"Tents, Tarpaulines",10515000,3306,
 3/1/2020,Garments,209048000,3403000,61.4305025
 3/1/2020,Artificial Silk & Synthetics,29657000,34807,
-3/1/2020,Madeups (excl. towels & bedwear),53002000,0,
+3/1/2020,Madeups ,53002000,0,
 3/1/2020,Other Textiles,42879000,0,
 4/1/2020,Raw Cotton,233000,0,
 4/1/2020,Cotton Yarn,38772000,16192,2.39451581
@@ -205,7 +205,7 @@ date,category,Exports_US$,volume,unit_price
 4/1/2020,"Tents, Tarpaulines",6340000,1874,
 4/1/2020,Garments,61398000,1024000,59.95898438
 4/1/2020,Artificial Silk & Synthetics,11750000,14154,
-4/1/2020,Madeups (excl. towels & bedwear),21039000,0,
+4/1/2020,Madeups ,21039000,0,
 4/1/2020,Other Textiles,21978000,0,
 5/1/2020,Raw Cotton,0,0,
 5/1/2020,Cotton Yarn,52000000,23349,2.227076106
@@ -218,7 +218,7 @@ date,category,Exports_US$,volume,unit_price
 5/1/2020,"Tents, Tarpaulines",9420000,2954,
 5/1/2020,Garments,135610000,2309000,58.7310524
 5/1/2020,Artificial Silk & Synthetics,17604000,22500,
-5/1/2020,Madeups (excl. towels & bedwear),34590000,0,
+5/1/2020,Madeups ,34590000,0,
 5/1/2020,Other Textiles,32959000,0,
 6/1/2020,Raw Cotton,0,0,
 6/1/2020,Cotton Yarn,74323000,35984,2.065445754
@@ -231,7 +231,7 @@ date,category,Exports_US$,volume,unit_price
 6/1/2020,"Tents, Tarpaulines",10496000,3072,
 6/1/2020,Garments,184987000,2535000,72.97317554
 6/1/2020,Artificial Silk & Synthetics,24245000,35027,
-6/1/2020,Madeups (excl. towels & bedwear),42507000,0,
+6/1/2020,Madeups ,42507000,0,
 6/1/2020,Other Textiles,44075000,0,
 7/1/2020,Raw Cotton,0,0,
 7/1/2020,Cotton Yarn,60523000,28448,2.127495782
@@ -244,7 +244,7 @@ date,category,Exports_US$,volume,unit_price
 7/1/2020,"Tents, Tarpaulines",12005000,3417,
 7/1/2020,Garments,274246000,3787000,72.41774492
 7/1/2020,Artificial Silk & Synthetics,28388000,35067,
-7/1/2020,Madeups (excl. towels & bedwear),60805000,0,
+7/1/2020,Madeups ,60805000,0,
 7/1/2020,Other Textiles,48758000,0,
 8/1/2020,Raw Cotton,230000,206,
 8/1/2020,Cotton Yarn,54613000,25472,2.144040515
@@ -257,7 +257,7 @@ date,category,Exports_US$,volume,unit_price
 8/1/2020,"Tents, Tarpaulines",7499000,2418,
 8/1/2020,Garments,202979000,2450000,82.84857143
 8/1/2020,Artificial Silk & Synthetics,23223000,25999,
-8/1/2020,Madeups (excl. towels & bedwear),49040000,0,
+8/1/2020,Madeups ,49040000,0,
 8/1/2020,Other Textiles,37974000,0,
 9/1/2020,Raw Cotton,41000,34,
 9/1/2020,Cotton Yarn,55339000,25472,2.172542399
@@ -270,7 +270,7 @@ date,category,Exports_US$,volume,unit_price
 9/1/2020,"Tents, Tarpaulines",8680000,3072,
 9/1/2020,Garments,224226000,2650000,84.61358491
 9/1/2020,Artificial Silk & Synthetics,24002000,25140,
-9/1/2020,Madeups (excl. towels & bedwear),62758000,0,
+9/1/2020,Madeups ,62758000,0,
 9/1/2020,Other Textiles,55000000,0,
 10/1/2020,Raw Cotton,252000,206,
 10/1/2020,Cotton Yarn,59853000,26120,2.291462481
@@ -283,7 +283,7 @@ date,category,Exports_US$,volume,unit_price
 10/1/2020,"Tents, Tarpaulines",12346000,4678,
 10/1/2020,Garments,245977000,2933000,83.86532561
 10/1/2020,Artificial Silk & Synthetics,29613000,8224,
-10/1/2020,Madeups (excl. towels & bedwear),68176000,0,
+10/1/2020,Madeups ,68176000,0,
 10/1/2020,Other Textiles,53925000,0,
 11/1/2020,Raw Cotton,0,0,
 11/1/2020,Cotton Yarn,74224000,31683,2.342707446
@@ -296,7 +296,7 @@ date,category,Exports_US$,volume,unit_price
 11/1/2020,"Tents, Tarpaulines",9711000,4829,
 11/1/2020,Garments,258396000,3086000,83.73169151
 11/1/2020,Artificial Silk & Synthetics,28819000,7023,
-11/1/2020,Madeups (excl. towels & bedwear),66320000,0,
+11/1/2020,Madeups ,66320000,0,
 11/1/2020,Other Textiles,51703000,0,
 12/1/2020,Raw Cotton,69000,53,
 12/1/2020,Cotton Yarn,96177000,39316,2.446255977
@@ -309,7 +309,7 @@ date,category,Exports_US$,volume,unit_price
 12/1/2020,"Tents, Tarpaulines",12238000,4618,
 12/1/2020,Garments,284915000,3480000,81.87212644
 12/1/2020,Artificial Silk & Synthetics,33458000,8165,
-12/1/2020,Madeups (excl. towels & bedwear),72133000,0,
+12/1/2020,Madeups ,72133000,0,
 12/1/2020,Other Textiles,56160000,0,
 1/1/2021,Raw Cotton,0,0,
 1/1/2021,Cotton Yarn,85693000,32694,2.621061969
@@ -322,7 +322,7 @@ date,category,Exports_US$,volume,unit_price
 1/1/2021,"Tents, Tarpaulines",11420000,3963,
 1/1/2021,Garments,282897000,3540000,79.91440678
 1/1/2021,Artificial Silk & Synthetics,33187000,7612,
-1/1/2021,Madeups (excl. towels & bedwear),67691000,0,
+1/1/2021,Madeups ,67691000,0,
 1/1/2021,Other Textiles,55272000,0,
 2/1/2021,Raw Cotton,0,0,
 2/1/2021,Cotton Yarn,120259000,44606,2.69602744
@@ -335,7 +335,7 @@ date,category,Exports_US$,volume,unit_price
 2/1/2021,"Tents, Tarpaulines",8333000,3045,
 2/1/2021,Garments,238451000,3001000,79.45718094
 2/1/2021,Artificial Silk & Synthetics,29158000,7033,
-2/1/2021,Madeups (excl. towels & bedwear),59108000,0,
+2/1/2021,Madeups ,59108000,0,
 2/1/2021,Other Textiles,53629000,0,
 3/1/2021,Raw Cotton,0,0,
 3/1/2021,Cotton Yarn,114523000,39063,2.931751274
@@ -348,7 +348,7 @@ date,category,Exports_US$,volume,unit_price
 3/1/2021,"Tents, Tarpaulines",6928000,2326,
 3/1/2021,Garments,256925000,3125000,82.216
 3/1/2021,Artificial Silk & Synthetics,39358000,9059,
-3/1/2021,Madeups (excl. towels & bedwear),59508000,0,
+3/1/2021,Madeups ,59508000,0,
 3/1/2021,Other Textiles,60469000,0,
 4/1/2021,Raw Cotton,0,0,
 4/1/2021,Cotton Yarn,102733000,34358,2.990075092
@@ -361,7 +361,7 @@ date,category,Exports_US$,volume,unit_price
 4/1/2021,"Tents, Tarpaulines",6565000,2388,
 4/1/2021,Garments,243642000,3066000,79.46575342
 4/1/2021,Artificial Silk & Synthetics,32441000,7817,
-4/1/2021,Madeups (excl. towels & bedwear),61799000,0,
+4/1/2021,Madeups ,61799000,0,
 4/1/2021,Other Textiles,55070000,0,
 5/1/2021,Raw Cotton,0,0,
 5/1/2021,Cotton Yarn,72084000,23560,3.05959253
@@ -374,7 +374,7 @@ date,category,Exports_US$,volume,unit_price
 5/1/2021,"Tents, Tarpaulines",5923000,1740,
 5/1/2021,Garments,194817000,3359000,57.99851146
 5/1/2021,Artificial Silk & Synthetics,24509000,5416,
-5/1/2021,Madeups (excl. towels & bedwear),48665000,0,
+5/1/2021,Madeups ,48665000,0,
 5/1/2021,Other Textiles,41626000,0,
 6/1/2021,Raw Cotton,211000,95,
 6/1/2021,Cotton Yarn,120931000,39418,3.067913136
@@ -387,7 +387,7 @@ date,category,Exports_US$,volume,unit_price
 6/1/2021,"Tents, Tarpaulines",8734000,2969,
 6/1/2021,Garments,325908000,3932000,82.88606307
 6/1/2021,Artificial Silk & Synthetics,44268000,10448,
-6/1/2021,Madeups (excl. towels & bedwear),79034000,0,
+6/1/2021,Madeups ,79034000,0,
 6/1/2021,Other Textiles,62652000,0,
 7/1/2021,Raw Cotton,0,0,
 7/1/2021,Cotton Yarn,89874000,28777,3.123119158
@@ -400,7 +400,7 @@ date,category,Exports_US$,volume,unit_price
 7/1/2021,"Tents, Tarpaulines",6610000,2134,
 7/1/2021,Garments,301188000,3709000,81.20463737
 7/1/2021,Artificial Silk & Synthetics,32362000,7052,
-7/1/2021,Madeups (excl. towels & bedwear),67086000,19623,
+7/1/2021,Madeups ,67086000,19623,
 7/1/2021,Other Textiles,57537000,40532,
 8/1/2021,Raw Cotton,0,0,
 8/1/2021,Cotton Yarn,103518000,32880,3.148357664
@@ -413,7 +413,7 @@ date,category,Exports_US$,volume,unit_price
 8/1/2021,"Tents, Tarpaulines",5637000,2144,
 8/1/2021,Garments,283760000,3353000,84.62869072
 8/1/2021,Artificial Silk & Synthetics,36842000,9576,
-8/1/2021,Madeups (excl. towels & bedwear),66090000,0,
+8/1/2021,Madeups ,66090000,0,
 8/1/2021,Other Textiles,61706000,0,
 9/1/2021,Raw Cotton,0,0,
 9/1/2021,Cotton Yarn,95228000,28896,3.295542636
@@ -426,7 +426,7 @@ date,category,Exports_US$,volume,unit_price
 9/1/2021,"Tents, Tarpaulines",8926000,2995,
 9/1/2021,Garments,276240000,3293000,83.8870331
 9/1/2021,Artificial Silk & Synthetics,38744000,9428,
-9/1/2021,Madeups (excl. towels & bedwear),64071000,0,
+9/1/2021,Madeups ,64071000,0,
 9/1/2021,Other Textiles,65311000,0,
 10/1/2021,Raw Cotton,0,0,
 10/1/2021,Cotton Yarn,106148000,31991,3.318058204
@@ -439,18 +439,31 @@ date,category,Exports_US$,volume,unit_price
 10/1/2021,"Tents, Tarpaulines",9633000,3057,0
 10/1/2021,Garments,297435000,3548000,83.83173619
 10/1/2021,Artificial Silk & Synthetics,35373000,7902,0
-10/1/2021,Madeups (excl. towels & bedwear),71155000,22454,0
+10/1/2021,Madeups ,71155000,22454,0
 10/1/2021,Other Textiles,65543000,48791,0
 11/1/2021,Raw Cotton,0,0,
-11/1/2021,Cotton Yarn,109133000,30921,3.529413667
-11/1/2021,Cotton Cloth,204850000,36528,
+11/1/2021,Cotton Yarn,109133000,31000,3.529413667
+11/1/2021,Cotton Cloth,204848000,38239,
 11/1/2021,Cotton Crd/Cmd,62000,45,
-11/1/2021,Non-Cotton Yarn,5840000,2110,
-11/1/2021,Knitwear,457855000,15407000,29.71733628
-11/1/2021,Bedwear,315076000,45293,6.956395028
-11/1/2021,Towels,105283000,21249,4.954727281
-11/1/2021,"Tents, Tarpaulines",11973000,3600,
-11/1/2021,Garments,328717000,4170000,78.82901679
+11/1/2021,Non-Cotton Yarn,5840000,2100,
+11/1/2021,Knitwear,458977000,21181000,29.71733628
+11/1/2021,Bedwear,315076000,52924,6.956395028
+11/1/2021,Towels,105283000,21741,4.954727281
+11/1/2021,"Tents, Tarpaulines",11973000,4457,
+11/1/2021,Garments,326656000,4170000,78.82901679
 11/1/2021,Artificial Silk & Synthetics,41095000,10825,
-11/1/2021,Madeups (excl. towels & bedwear),84151000,,
-11/1/2021,Other Textiles,72194000,,
+11/1/2021,Madeups ,84410000,,
+11/1/2021,Other Textiles,72577000,,
+12/1/2021,Raw Cotton,1763000,721,
+12/1/2021,Cotton Yarn,106529000,28425,3.747722076
+12/1/2021,Cotton Cloth,189086000,31527,
+12/1/2021,Cotton Crd/Cmd,6000,2,
+12/1/2021,Non-Cotton Yarn,5200000,1795,
+12/1/2021,Knitwear,440017000,19878000,22.13587886
+12/1/2021,Bedwear,253446000,36151,7.010760422
+12/1/2021,Towels,95200000,17996,5.290064459
+12/1/2021,"Tents, Tarpaulines",13959000,3782,
+12/1/2021,Garments,346607000,,
+12/1/2021,Artificial Silk & Synthetics,40432000,8011,
+12/1/2021,Madeups ,69262000,,
+12/1/2021,Other Textiles,62071000,,

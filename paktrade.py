@@ -557,7 +557,7 @@ else:
                                     y=df_2021_22['pct_change_yoy'], 
                                     mode="lines+markers+text", 
                                     marker=dict(size=16, color="Red"), 
-                                    name="pct_change_yoy", 
+                                    name="%Change from previous year", 
                                     text=df_2021_22['pct_change_yoy'],
                                     textposition='top center',
                                     texttemplate="YOY: %{text:.2s}%",
@@ -596,10 +596,10 @@ else:
 
             #subtitle
             fig_ytd.add_annotation(
-                        text="cumulative exports in the current year and the previous year",
+                        text="current year vs previous year",
                         font=dict(family='roboto', color='black', size=24), 
                         xref="x domain", yref="y domain",
-                        x=0, y=1.10, 
+                        x=0, y=1.06, 
                         showarrow=False,
                         arrowhead=1)
             #data reference

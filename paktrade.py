@@ -596,7 +596,7 @@ else:
 
             #subtitle
             fig_ytd.add_annotation(
-                        text="comparison of cumulative exports in the current year and the previous year",
+                        text="cumulative exports in the current year and the previous year",
                         font=dict(family='roboto', color='black', size=24), 
                         xref="x domain", yref="y domain",
                         x=0, y=1.10, 

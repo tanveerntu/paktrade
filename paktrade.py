@@ -614,7 +614,7 @@ else:
             fig_ytd.update_layout(legend=dict(
                 orientation="h",
                 yanchor="bottom",
-                y=1.06,
+                y=1.04,
                 xanchor="right",
                 x=1
             ))

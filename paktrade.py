@@ -599,7 +599,7 @@ else:
                         text="current year vs previous year",
                         font=dict(family='roboto', color='black', size=24), 
                         xref="x domain", yref="y domain",
-                        x=0, y=1.06, 
+                        x=0, y=1.1, 
                         showarrow=False,
                         arrowhead=1)
             #data reference
@@ -607,7 +607,7 @@ else:
                         text="Source: Pakinstan Bureau of Statistics/National Textile University, Pakistan",
                         font=dict(family='Roboto', color='#758D99', size=20), 
                         xref="x domain", yref="y domain",
-                        x=0, y=-0.18, 
+                        x=0, y=-0.16, 
                         showarrow=False,
                         arrowhead=1)
 

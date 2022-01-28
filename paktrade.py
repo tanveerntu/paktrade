@@ -565,29 +565,58 @@ else:
                                     hovertemplate='Year: %{x} <br>YOY: %{y} %',
                                     ), row=1, col=1 )
             fig_ytd.update_yaxes(title_text="Cumulative Exports in US$", secondary_y=True)
+            
+
             fig_ytd.update_layout(
-                autosize=True, height=700, width=1100,
+                autosize=True, height=650, width=1050,
                 legend_traceorder="reversed",
-                margin=dict(t=80, b=0, l=40, r=40),
-                title="Pakistan Textile Exports",
+                margin=dict(t=90, b=90, l=90, r=40),
                 title_font=dict(size=25, color='#111111', family="fjalla one, sans-serif"),
-                xaxis_title='', yaxis_title="YOY change %",
-                plot_bgcolor='#ededed',
+                xaxis_title='', yaxis_title="% Change year on year (YOY)",
+                plot_bgcolor='#ffffff',
                 paper_bgcolor='#ffffff',
                 font=dict(color='#111111', size=18, family="roboto, sans-serif"),    #font of lablels of axises
             )
+            #updates axes
+            fig_ytd.update_xaxes(showline=True, linewidth=2, linecolor='black')
+            fig_ytd.update_yaxes(showline=True, linewidth=2, linecolor='black')
+            fig_ytd.update_xaxes(tickangle=0, tickfont=dict(family='Roboto', color='black', size=24))
+            #fig_ytd.update_yaxes(tickangle=0, tickfont=dict(family='Roboto', color='black', size=24))
+            fig_ytd.update_yaxes(title_font=dict(family='Roboto', color='black', size=24))
+            #fig_ytd.update_yaxes(showgrid=True, gridwidth=1, gridcolor='#758D99')
+            ###############
+            #title
             fig_ytd.add_annotation(
-                        text="Source: PBS/NTU",
+                        text="Pakistan Textile Exports",
+                        font=dict(family='Fjalla one', color='#006BA2', size=36), 
                         xref="x domain", yref="y domain",
-                        x=1, y=1.1, 
+                        x=0, y=1.18, 
                         showarrow=False,
                         arrowhead=1)
+
+            #subtitle
+            fig_ytd.add_annotation(
+                        text="comparison of cumulative exports in the current year and the previous year",
+                        font=dict(family='roboto', color='black', size=24), 
+                        xref="x domain", yref="y domain",
+                        x=0, y=1.10, 
+                        showarrow=False,
+                        arrowhead=1)
+            #data reference
+            fig_ytd.add_annotation(
+                        text="Source: Pakinstan Bureau of Statistics/National Textile University, Pakistan",
+                        font=dict(family='Roboto', color='#758D99', size=20), 
+                        xref="x domain", yref="y domain",
+                        x=0, y=-0.18, 
+                        showarrow=False,
+                        arrowhead=1)
+
             fig_ytd.update_layout(legend=dict(
                 orientation="h",
                 yanchor="bottom",
                 y=1.02,
                 xanchor="right",
-                x=0.7
+                x=1
             ))
             st.plotly_chart(fig_ytd, use_container_width=True) # to show Figure; container width true makes fig. size responsive
 

@@ -5,4 +5,4 @@ pandas==1.2.5
 plotly==5.4.0
 yahoo_fin==0.8.9.1
 yfinance==0.1.67
-protoc==3.19.0
+protoc==3.20

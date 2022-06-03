@@ -190,7 +190,7 @@ if option == 'Overall Trade Statistics':
             ########################################
             #Top 10 Trading partners
             ######################################
-            api_url2 = 'https://comtrade.un.org/api/get?max=A&type=C&freq=A&px=HS&cc=52,53,54,55,56,57,58,59,60,61,62,63&ps=now&r=586&p=all&rg=2&cc=TOTAL&fmt=csv'
+            api_url2 = 'https://comtrade.un.org/api/get?max=A&type=C&freq=A&px=HS&ps=now&r=586&p=all&rg=2&cc=TOTAL&fmt=csv'
 
             response = requests.get(api_url2)
             data = response.content
